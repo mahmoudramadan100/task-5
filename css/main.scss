@@ -2,32 +2,32 @@
 @use 'sass/mixin' as *;
 
 @font-face {
-	font-family: 'NotoKufiArabic';
-	src: url('../font/NotoKufiArabic-Regular.ttf') format('truetype');
+	font-family: 'GE_SS_Unique';
+	src: url('../font/GE_SS_Unique_Bold_5.otf') format('truetype');
 	font-weight: 300;
 	font-style: normal;
 }
 
-@font-face {
-    font-family: 'NotoKufiArabic';
-    src: url("../font/NotoKufiArabic-Medium.ttf") format('truetype');
-    font-weight: 500;
-    font-style:normal;
-}
+// @font-face {
+//     font-family: 'NotoKufiArabic';
+//     src: url("../font/NotoKufiArabic-Medium.ttf") format('truetype');
+//     font-weight: 500;
+//     font-style:normal;
+// }
 
-@font-face {
-	font-family: 'NotoKufiArabic';
-	src: url('../font/NotoKufiArabic-bold.ttf') format('truetype');
-	font-weight: 700;
-	font-style: normal;
-}
+// @font-face {
+// 	font-family: 'NotoKufiArabic';
+// 	src: url('../font/NotoKufiArabic-bold.ttf') format('truetype');
+// 	font-weight: 700;
+// 	font-style: normal;
+// }
 
 * {
     box-sizing: border-box;
     outline: none;
 }
 body {
-    font-family: "NotoKufiArabic", sans-serif;
+    font-family: "GE_SS_Unique", sans-serif;
     box-sizing: border-box;
     text-align: right;
     direction: rtl;
@@ -47,4 +47,4 @@ a {
     -o-transition: 0.3s;
 }
 
-// Swiper 
+

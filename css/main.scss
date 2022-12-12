@@ -508,7 +508,7 @@ a {
                 font-size: 15px;
             }
             &:hover {
-                @extend .transition;
+                cursor: pointer;
                 background: linear-gradient(90deg, rgba(239,142,134,1) 5%, rgba(234,108,97,1) 21%);
             }
         }

@@ -29,7 +29,7 @@ a:hover {
   text-decoration: none;
 }
 
-.transition, .scroll-top, .footer .content .social a, .footer .boxs .box:hover, .footer .boxs .box, .header .container-header .content .get, .navbar .container .list li a, .up-navbar .get-app .icon, .up-navbar .get-app, .up-navbar .info .social a {
+.transition, .scroll-top, .footer .content .social a, .footer .boxs .box, .header .container-header .content .get, .navbar .container .list li a, .up-navbar .get-app .icon, .up-navbar .get-app, .up-navbar .info .social a {
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -507,6 +507,7 @@ a:hover {
   font-size: 15px;
 }
 .footer .boxs .box:hover {
+  cursor: pointer;
   background: linear-gradient(90deg, rgb(239, 142, 134) 5%, rgb(234, 108, 97) 21%);
 }
 .footer .content {

@@ -2,25 +2,18 @@
 @use 'sass/mixin' as *;
 
 @font-face {
-	font-family: 'GE_SS_Unique';
-	src: url('../font/GE_SS_Unique_Bold_5.otf') format('truetype');
-	font-weight: 300;
-	font-style: normal;
+    font-family: 'GE_SS_Unique';
+    src: url("../font/GE_SS_Unique_Light.otf") format('truetype');
+    font-weight: 300;
+    font-style: normal;
 }
 
-// @font-face {
-//     font-family: 'NotoKufiArabic';
-//     src: url("../font/NotoKufiArabic-Medium.ttf") format('truetype');
-//     font-weight: 500;
-//     font-style:normal;
-// }
-
-// @font-face {
-// 	font-family: 'NotoKufiArabic';
-// 	src: url('../font/NotoKufiArabic-bold.ttf') format('truetype');
-// 	font-weight: 700;
-// 	font-style: normal;
-// }
+@font-face {
+    font-family: 'GE_SS_Unique';
+    src: url("../font/GE_SS_Unique_Bold.otf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
 
 * {
     box-sizing: border-box;
@@ -47,6 +40,7 @@ a {
     -o-transition: 0.3s;
 }
 
+// Start Up-Navbar
 
 .up-navbar {
     box-shadow: 1px 1px 1px 1px #e7e6e6;
@@ -57,49 +51,64 @@ a {
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
-}
-.info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    width: 60%;
-    a {
-        color: #777;
-        font-size: 14px;
+        @include breakpoints(sm) {
+            height: 70px;
+            justify-content: space-between;
+        }
+        @include breakpoints(xs) {
+            height: 70px;
+            justify-content: space-between;
+        }
     }
-    .icon {
-        padding-left: 5px;
-        font-size: 20px;
-        color: $red-color;
-        font-weight: 300;
-    }
-    p {
-        display: inline-block;
-        margin: 0;
-        padding: 0;
-    }
-    .social {
-       a {
-        padding: 0 8px;
-        color:$blue-color;
-        font-size: 17px;
-        @extend .transition;
-        &:hover {
+    .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        width: 55%;
+        a {
+            color: $gray-color;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        .icon {
+            padding-left: 5px;
+            font-size: 20px;
             color: $red-color;
-}
-       }
-       @include breakpoints(mobile) {
-        display: none;
-       }
+            font-weight: 300;
+        }
+        p {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            font-weight: 300;
+            font-size: 14px;
+        }
+        .social {
+            a {
+                padding: 0 8px;
+                color: $blue-color;
+                font-size: 17px;
+                font-weight: 300;
+                @extend .transition;
+                &:hover {
+                    color: $red-color;
+                }
+            }
+        }
+        @include breakpoints(md) {
+            width: 65%;
+        }
+        @include breakpoints(sm) {
+            display: none;
+        }
+        @include breakpoints(xs) {
+            display: none;
+        }
     }
-    @include breakpoints(custome-size) {
-       background: #000;
-    }
-    }
-    .app {
-        font-size: 14px;
-        padding: 10px 20px;
+    .get-app {
+        font-size: 15px;
+        padding: 8px 20px;
         color: #fff;
         border-radius: 50px;
         -webkit-border-radius: 50px;
@@ -109,9 +118,9 @@ a {
         background-color: $red-color;
         @extend .transition;
         .icon {
-            padding-right: 7px;
-            font-size: 20px;
+            padding-right: 3px;
             @extend .transition;
+            font-size: 15px;
         }
         &:hover {
             background-color: $blue-color;
@@ -121,23 +130,46 @@ a {
                 -moz-transform: translatey(3px);
                 -ms-transform: translatey(3px);
                 -o-transform: translatey(3px);
-}
+            }
         }
-}
+    }
+    img {
+        display: none;
+        width: 90px;
+        height: 60px;
+        @include breakpoints(sm) {
+            display: flex;
+        }
+        @include breakpoints(xs) {
+            display: flex;
+        }
+    }
+    @include breakpoints(sm) {
+        display: none;
+    }
+    @include breakpoints(xs) {
+        display: none;
+    }
 }
 // Start Navbar
 .navbar {
     box-shadow: 1px 1px 1px 1px #f7f7f7;
     height: 100px;
+    z-index: 999;
     .container {
         display: flex;
         align-items: center;
-        height: 100px;
         .logo {
             max-width: 140px;
             height: 80px;
             padding: 0 0 10px;
             margin: 0;
+            @include breakpoints(sm) {
+                height: 65px;
+            }
+            @include breakpoints(xs) {
+                height: 65px;
+            }
         }
         .list {
             list-style: none;
@@ -148,16 +180,723 @@ a {
             li {
                 padding: 0 10px;
                 a {
-                    color: #777;
+                    color: $blue-color;
                     font-size: 15px;
                     font-weight: 300;
                     @extend .transition;
                     &:hover {
-                        color: $red-color
+                        color: $red-color;
                     }
+                    @include breakpoints(sm) {
+                        color: #fff;
+                        font-weight: 500;
+                    }
+                    @include breakpoints(xs) {
+                        color: #fff;
+                        font-weight: 500;
+                    }
+                }
+                @include breakpoints(sm) {
+                    padding: 10px 0;
+                }
+                @include breakpoints(xs) {
+                    padding: 10px 0;
+                }
+            }
+            @include breakpoints(sm) {
+                flex-direction: column;
+                padding: 25px;
+            }
+            @include breakpoints(xs) {
+                flex-direction: column;
+                padding: 25px;
+            }
+        }
+        @include breakpoints(sm) {
+            height: auto;
+        }
+        @include breakpoints(xs) {
+            height: auto;
+        }
+    }
+    @include breakpoints(sm) {
+        height: 65px;
+        position: fixed;
+        width: 100%;
+        background: #fff;
+    }
+    @include breakpoints(xs) {
+        height: 65px;
+        position: fixed;
+        width: 100%;
+        background: #fff;
+    }
+
+}
+// End navbar
+// Start Header
+.header {
+    padding: 80px 0;
+    .container-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        .content {
+            flex: 1;
+            padding: 0 40px;
+            width: 600px;
+            h1 {
+                color: $red-color;
+                font-size: 30px;
+                font-weight: 500;
+                @include breakpoints(xs) {
+                    font-size: 24px;
+                }
+            }
+            h3 {
+                color: $blue-color;
+                font-size: 27px;
+                font-weight: 500;
+                margin: 30px 0;
+                @include breakpoints(xs) {
+                    font-size: 20px;
+                    margin: 30px 0;
+                }
+            }
+            p {
+                color: $gray-color;
+                font-size: 15px;
+                line-height: 1.7;
+                font-weight: 300;
+                margin: 40px 0;
+                padding-left: 50px;
+                max-width: 650px;
+                @include breakpoints(md) {
+                    padding: 0 5px;
+                }
+                @include breakpoints(sm) {
+                    padding: 0 5px;
+                }
+                @include breakpoints(xs) {
+                    padding: 0 5px;
+                }
+            }
+            .get {
+                background-color: $red-color;
+                padding: 13px 40px;
+                color: #fff;
+                font-size: 17px;
+                font-weight: 500;
+                border-radius: 50px;
+                margin-right: 20px;
+                @extend .transition;
+                &:hover {
+                    background-color: $blue-color;
+                }
+                @include breakpoints(xs) {
+                    padding: 12px 30px;
+                    font-size: 14px;
+                }
+            }
+            @include breakpoints(md) {
+                padding: 40px 0;
+                text-align: center;
+            }
+            @include breakpoints(sm) {
+                padding: 40px 0;
+                text-align: center;
+                width: 90%;
+            }
+            @include breakpoints(xs) {
+                padding: 40px 0;
+                text-align: center;
+                width: 90%;
+            }
+        }
+        img {
+            max-width: 650px;
+            max-height: 280px;
+            object-fit: contain;
+            @include breakpoints(sm) {
+                max-width: 90%;
+            }
+            @include breakpoints(xs) {
+                max-width: 90%;
+            }
+        }
+        @include breakpoints(md) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        @include breakpoints(sm) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        @include breakpoints(xs) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    @include breakpoints(md) {
+        padding: 10px 0 30px;
+    }
+    @include breakpoints(sm) {
+        padding: 80px 0 60px;
+    }
+    @include breakpoints(xs) {
+        padding: 80px 0 60px;
+    }
+}
+
+// End Header
+// Start Feature
+.feature {
+    padding: 70px 0;
+    background: $bg;
+    .main-title {
+        width: 370px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 80px;
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            color: $blue-color;
+            line-height: 1.7;
+            font-weight: 500;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 10px;
+            span {
+                color: $red-color;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                width: 70%;
+                height: 2px;
+                background-color: #fff;
+                left: 50%;
+                bottom: 0;
+                transform: translatex(-50%);
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                width: 20%;
+                height: 2px;
+                background-color: $orange-color;
+                left: 50%;
+                bottom: 0;
+                transform: translatex(-50%);
+                z-index: 1;
+            }
+        }
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        // display: flex;
+        // justify-content: space-between;
+        gap: 50px;
+        img {
+            text-align: center;
+            margin: 0 auto;
+            width: 400px;
+            height: 600px;
+            position: relative;
+            right: -90px;
+            // object-fit: contain;
+            @include breakpoints(sm) {
+                display: none;
+            }
+            @include breakpoints(xs) {
+                display: none;
+            }
+        }
+        .content {
+            .text {
+                margin-bottom: 70px;
+                counter-increment: listCounter;
+                span {
+                    color: $blue-color;
+                    font-size: 20px;
+                    font-weight: 500;
+                    padding: 7px 12px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    margin-left: 20px;
+                }
+                h4 {
+                    display: inline-block;
+                    font-size: 26px;
+                    color: $orange-color;
+                    padding: 0 60px 0 0;
+                    font-weight: 500;
+                    position: relative;
+                    width: 90%;
+                    &::before {
+                        content: "0" counter(listCounter);
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        color: $blue-color;
+                        font-size: 20px;
+                        font-weight: 500;
+                        padding: 7px 12px;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+                p {
+                    color: $blue-color;
+                    font-size: 14px;
+                    font-weight: 300;
+                    line-height: 1.7;
+                    margin: 15px 0;
                 }
             }
         }
     }
 }
-// End navbar
+// End Feature
+// Start Foucs
+.foucs {
+    background: linear-gradient(90deg, rgba(56,73,145,1) 0%, rgba(105,118,172,1) 100%);
+    .container {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        .text {
+            padding: 30px 0;
+            width: 650px;
+            @include breakpoints(md) {
+                width: 450px;
+            }
+            @include breakpoints(sm) {
+                width: 300px;
+            }
+            @include breakpoints(xs) {
+                width: 100%;
+                text-align: center;
+            }
+            h6 {
+                color: #c3bbc1;
+                font-weight: 300;
+                font-size: 14px;
+            }
+            p {
+                font-size: 24px;
+                color: #fff;
+                margin: 20px 0;
+                font-weight: 300;
+            }
+        }
+        img {
+            width: 250px;
+            height: calc(100% + 15px);
+            position: absolute;
+            top: -15px;
+            left: 0;
+            transform: translateX(50%);
+            @include breakpoints(large) {
+                transform: translateX(10%);
+                -webkit-transform: translateX(10%);
+                -moz-transform: translateX(10%);
+                -ms-transform: translateX(10%);
+                -o-transform: translateX(10%);
+            }
+            @include breakpoints(md) {
+                transform: translateX(-0%);
+                -webkit-transform: translateX(-0%);
+                -moz-transform: translateX(-0%);
+                -ms-transform: translateX(-0%);
+                -o-transform: translateX(-0%);
+}
+            @include breakpoints(sm) {
+                transform: translateX(0%);
+                -webkit-transform: translateX(0%);
+                -moz-transform: translateX(0%);
+                -ms-transform: translateX(0%);
+                -o-transform: translateX(0%);
+}
+            
+            @include breakpoints(xs) {
+                display: none;
+            }
+        }
+    }
+}
+
+// End Foucs
+// Start app 
+.app {
+    padding: 40px 0 130px;
+    background-color: $bg;
+    .text {
+        padding-top: 10px;
+        h2 {
+            color: $blue-color;
+            font-size: 28px;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            font-weight: 300;
+            span {
+                color: $red-color;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        p {
+            font-size: 15px;
+            font-weight: 300;
+            color: $blue-color;
+            line-height: 1.7;
+            margin: 40px 0;
+        }
+        .app-img {
+            display: flex;
+            gap: 20px;
+            img {
+                max-width: 100%;
+                object-fit: contain;
+            }
+            @include breakpoints(md) {
+                justify-content: center;
+            }
+            @include breakpoints(sm) {
+                justify-content: center;
+            }
+            @include breakpoints(xs) {
+                justify-content: center;
+            }
+        }
+        @include breakpoints(md) {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        @include breakpoints(sm) {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        @include breakpoints(xs) {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+    }
+    .img {
+        background: url("../img/undraw.svg");
+        background-size: cover;
+        text-align: center;
+        img {
+            max-width: 270px;
+            max-height: 370px;
+        }
+        @include breakpoints(xs) {}
+    }
+}
+// End App
+// Start Footer
+.footer {
+    position: relative;
+    background-image: url("../img/footer-bg.png");
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    background-position: 30% 11%;
+    .container {
+        z-index: 9;
+        position: relative;
+    }
+    .boxs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        top: -70px;
+        margin: 0 auto;
+        overflow: hidden;
+        z-index: 9;
+        .box {
+            display: flex;
+            padding: 0 40px;
+            width: 25%;
+            height: 130px;
+            align-items: center;
+            @extend .transition;
+            background: linear-gradient(90deg, rgba(239,142,134,1) 51%, rgba(234,108,97,1) 100%);
+            .icon {
+                background-color: #fff;
+                font-size: 10px !important;
+                line-height: 15px;
+                color: #232B58;
+                text-align: center;
+                width: 45px;
+                height: 45px;
+                padding: 10px;
+                border-radius: 50%;
+                @include breakpoints(sm) {
+                    margin: 0 auto;
+                }
+                @include breakpoints(xs) {
+                    margin: 0 auto;
+                }
+            }
+            a {
+                padding-right: 15px;
+                color: #fff;
+                font-weight: 300;
+                font-size: 15px;
+                @include breakpoints(sm) {
+                    display: none;
+                }
+                @include breakpoints(xs) {
+                    display: none;
+                }
+            }
+            &:hover {
+                cursor: pointer;
+                background: linear-gradient(90deg, rgba(239,142,134,1) 5%, rgba(234,108,97,1) 21%);
+            }
+            @include breakpoints(sm) {
+                height: 60px;
+                width: 20%;
+                padding: 0;
+            }
+            @include breakpoints(xs) {
+                height: 60px;
+                width: 20%;
+                padding: 0;
+            }
+        }
+        @include breakpoints(md) {
+            display: none;
+        }
+        @include breakpoints(sm) {
+            height: 60px;
+            top: -30px;
+        }
+        @include breakpoints(xs) {
+            height: 60px;
+            top: -30px;
+        }
+    }
+
+    .content {
+        text-align: center;
+        margin: 0 auto;
+        padding: 100px 0 35px;
+        width: 50%;
+        position: relative;
+        z-index: 9;
+        img {
+            height: 150px;
+            width: 140px;
+            object-fit: contain;
+        }
+        p {
+            margin: 30px 0;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+        .social {
+            a {
+                padding: 0 12px;
+                color: #fff;
+                font-size: 20px;
+                font-weight: 300;
+                @extend .transition;
+                &:hover {
+                    color: $red-color;
+                }
+            }
+        }
+        @include breakpoints(md) {
+            width: 85%;
+        }
+        @include breakpoints(sm) {
+            width: 85%;
+        }
+        @include breakpoints(xs) {
+            width: 80%;
+        }
+    }
+    .copyright {
+        margin: 0 auto;
+        padding: 15px 0 25px;
+        border-top: 1px solid #636868;
+        color: #fff;
+        text-align: center;
+        font-weight: 300;
+        @include breakpoints(sm) {
+            font-size: 13px;
+        }
+        @include breakpoints(xs) {
+            font-size: 12px;
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: rgb(38 62 161 / 15%);
+    }
+}
+// End Footer
+// Scroll-top
+.scroll-top {
+    // display: none;
+    position: fixed;
+    color: #fff;
+    padding: 10px;
+    width: 50px;
+    height: 55px;
+    text-align: center;
+    font-size: 9px;
+    background-color: $blue-color;
+    left: 15px;
+    bottom: 15px;
+    border: none;
+    font-weight: 300;
+    @extend .transition;
+    &:hover {
+        background-color: $red-color;
+        cursor: pointer;
+        border: none;
+        box-shadow: none;
+    }
+    &:focus {
+        outline: none;
+    }
+    .icon {
+        font-size: 22px;
+    }
+
+}
+
+@media only screen and (min-width: 767px) {
+    .navbar {
+        justify-content: space-between;
+        padding: 0 0 0 16px;
+    }
+}
+
+.navbar-overlay {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+body.open .navbar-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media only screen and (min-width: 767px) {
+    .navbar-overlay {
+        display: none;
+    }
+}
+
+.navbar-burger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    align-items: center;
+    color: $blue-color;
+    @extend .transition;
+    &:hover {
+        cursor: pointer;
+        color: $red-color;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+@media only screen and (min-width: 767px) {
+    .navbar-burger {
+        display: none;
+    }
+}
+
+.navbar-title {
+    margin: 0;
+    font-size: 16px;
+}
+
+.navbar-menu {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    translate: -100% 0;
+    width: 270px;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    background: $blue-color;
+    visibility: hidden;
+    transition: translate 0.3s;
+}
+
+body.open .navbar-menu {
+    translate: 0 0;
+    visibility: visible;
+}
+
+@media only screen and (min-width: 767px) {
+    .navbar-menu {
+        position: static;
+        translate: 0 0;
+        width: auto;
+        background: transparent;
+        flex-direction: row;
+        visibility: visible;
+    }
+}
+
+.navbar-menu > button {
+    color: rgba(182, 55, 55, 0.5);
+    background: transparent;
+    padding: 0 8px;
+}
+
+.navbar-menu > button.active {
+    color: inherit;
+}

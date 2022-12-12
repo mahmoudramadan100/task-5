@@ -42,6 +42,8 @@ a {
 
 // Start Up-Navbar
 
+// Start Up-Navbar
+
 .up-navbar {
     box-shadow: 1px 1px 1px 1px #e7e6e6;
     height: 90px;
@@ -124,6 +126,7 @@ a {
         }
         &:hover {
             background-color: $blue-color;
+          
             .icon {
                 transform: translatey(3px);
                 -webkit-transform: translatey(3px);

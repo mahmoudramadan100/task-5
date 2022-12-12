@@ -218,6 +218,7 @@ a {
             @include breakpoints(xs) {
                 padding: 40px 20px;
                 text-align: center;
+                width: fit-content;
             }
         }
         img {
@@ -356,7 +357,6 @@ a {
             }
         }
     }
-
 }
 // End Feature
 // Start Foucs
@@ -434,6 +434,20 @@ a {
                 max-width: 100%;
                 object-fit: contain;
             }
+            @include breakpoints(md) {
+                justify-content: center;
+            }
+            @include breakpoints(xs) {
+                justify-content: center;
+            }
+        }
+        @include breakpoints(md) {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        @include breakpoints(xs) {
+            text-align: center;
+            padding-bottom: 30px;
         }
     }
     .img {
@@ -474,6 +488,7 @@ a {
             width: 300px;
             height: 130px;
             align-items: center;
+            @extend .transition;
             background: linear-gradient(90deg, rgba(239,142,134,1) 51%, rgba(234,108,97,1) 100%);
             .icon {
                 background-color: #fff;
@@ -491,6 +506,10 @@ a {
                 color: #fff;
                 font-weight: 300;
                 font-size: 15px;
+            }
+            &:hover {
+                @extend .transition;
+                background: linear-gradient(90deg, rgba(239,142,134,1) 5%, rgba(234,108,97,1) 21%);
             }
         }
     }
@@ -525,6 +544,15 @@ a {
                  color: $red-color;
                  }
             }
+         }
+         @include breakpoints(md) {
+            width: 85%;
+         }
+         @include breakpoints(sm) {
+            width: 85%;
+         }
+         @include breakpoints(xs) {
+            width: 80%;
          }
     }
     .copyright {
@@ -573,4 +601,5 @@ a {
     .icon {
         font-size: 22px;
     }
+    
 }

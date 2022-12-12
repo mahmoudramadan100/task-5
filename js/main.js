@@ -1,4 +1,4 @@
-
+// scroll to top
 $(window).scroll(function(){
     if ($(this).scrollTop() > 800) {
         $('.scroll-top').fadeIn();

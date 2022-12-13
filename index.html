@@ -89,7 +89,7 @@
         <link rel="manifest" href="img/favicon/manifest.json">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ff6b6b">
+        <meta name="theme-color" content="#232B58">
         <!-- Link Style -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/fontawesome.min.css">
@@ -99,6 +99,7 @@
         <!-- Start Up-navbar -->
         <div class="up-navbar">
             <div class="container">
+                <!-- <img src="img/logo.png" class="logo"> -->
                 <div class="info">
                     <a href="#">
                         <i class="fas fa-phone icon"></i>
@@ -133,9 +134,14 @@
         <!-- End Up-navbar -->
         <!-- Start Navbar -->
         <div class="navbar">
+            
             <div class="container">
-                <img src="img/logo.png" class="logo">
-                <ul class="list">
+                <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
+                <button type="button" class="navbar-burger" onclick="toggleMenuOpen()">
+                    <i class="fas fa-bars"></i>
+                  </button>
+                <img src="img/logo.png" class="logo navbar-title">
+                <ul class="list navbar-menu">
                     <li>
                         <a href="#" > الرئيسية</a>
                     </li>
@@ -186,27 +192,37 @@
             <div class="container">
                 <div class="content">
                     <div class="text">
+                        <div class="head">
+                        <span> 1 .</span>
                         <h4>
-                            جودة عالية
+                            جوده عالية
                         </h4>
+                    </div>
                         <p>  
                              هناك حقيقة مثبته منذ زمن طويل وهى ان المحتوى المقروء لصفحه ماسيلهى القارئ عن التركيز 
                             على الشكل الخارجى 
                         </p>
                     </div>
                     <div class="text">
-                        <h4>
-                            الطاقة القابلة للاستراداد
-                        </h4>
+                        <div class="head">
+                            <span> 2 .</span>
+                            <h4>
+                                الطاقة القابلة للاستراداد
+                            </h4>
+                        </div>
                         <p>  
                              هناك حقيقة مثبته منذ زمن طويل وهى ان المحتوى المقروء لصفحه ماسيلهى القارئ عن التركيز 
                             على الشكل الخارجى 
                         </p>
                     </div>
                     <div class="text">
-                        <h4>
-                            متصل ذكى
-                        </h4>
+                        <div class="head">
+                            <span> 3 .</span>
+                            <h4>
+                                متصل ذكى
+                            </h4>
+                        </div>
+                       
                         <p>  
                              هناك حقيقة مثبته منذ زمن طويل وهى ان المحتوى المقروء لصفحه ماسيلهى القارئ عن التركيز 
                             على الشكل الخارجى 
@@ -218,27 +234,37 @@
                 <!-- </div> -->
                 <div class="content content-2">
                     <div class="text">
-                        <h4>
-                            تحميل سريع
-                        </h4>
+                        <div class="head">
+                            <span> 4 .</span>
+                            <h4>
+                                تحميل سريع
+                            </h4>
+                        </div>
                         <p>  
                              هناك حقيقة مثبته منذ زمن طويل وهى ان المحتوى المقروء لصفحه ماسيلهى القارئ عن التركيز 
                             على الشكل الخارجى 
                         </p>
                     </div>
                     <div class="text">
-                        <h4>
-                            دعم مجانى
-                        </h4>
+                        <div class="head">
+                            <span> 5 .</span>
+                            <h4>
+                                دعم مجانى
+                            </h4>
+                        </div>
+                        
                         <p>  
                              هناك حقيقة مثبته منذ زمن طويل وهى ان المحتوى المقروء لصفحه ماسيلهى القارئ عن التركيز 
                             على الشكل الخارجى 
                         </p>
                     </div>
                     <div class="text">
-                        <h4>
-                            صلاحيه التحكم فى الدخول
-                        </h4>
+                        <div class="head">
+                            <span> 6 .</span>
+                            <h4>
+                                صلاحيه التحكم فى الدخول
+                            </h4>
+                        </div>
                         <p>  
                              هناك حقيقة مثبته منذ زمن طويل وهى ان المحتوى المقروء لصفحه ماسيلهى القارئ عن التركيز 
                             على الشكل الخارجى 
@@ -345,9 +371,9 @@
             <p class="copyright"> جميع الحقوق محفوظة لشركة بانوراما القصيم 2022</p>
         </div>
         <!-- End Navbar -->
-        <button onclick="scrollToTop()" class="scroll-top">
-             <i class="fas fa-bolt icon"></i>
-             للاعلى
+        <button class="scroll-top" id="scroll-top">
+            <i class="fas fa-bolt icon"></i>
+            للاعلى
     </button>
 
         <script src="js/jquery-1.8.3.min.js"></script>

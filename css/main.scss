@@ -207,6 +207,13 @@ a {
                 @include breakpoints(xs) {
                     padding: 10px 0;
                 }
+                @include breakpoints(xs) {
+                    padding: 10px 0;
+                }
+            }
+            @include breakpoints(sm) {
+                flex-direction: column;
+                padding: 25px;
             }
             @include breakpoints(sm) {
                 flex-direction: column;

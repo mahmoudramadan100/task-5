@@ -24,13 +24,6 @@ $('.scroll-top').click(function(){
 
 const toggleMenuOpen = () => document.body.classList.toggle("open");
 
-// $(document).ready(()=>{
-//     let isMenuAlreadyOpen = true;
-//     $('.navbar-burger').on('click',()=>{
-//         $('body').css("overflow",isMenuAlreadyOpen?"auto":"hidden")
-//         isMenuAlreadyOpen = !isMenuAlreadyOpen
-//     })
-// });
 
 // Detect request animation frame
 var scroll = window.requestAnimationFrame ||
@@ -83,19 +76,19 @@ function isElementInViewport(el) {
 // }
 // scrollApp(photo)
 
-    $(window).scroll(function () {
-    if ($(this).scrollDown() > 1726) {
-      $('.photo').animate({
-        with: "4500px"
-      },500);
-    } else {
-      $('.photo').fadeOut('slow');
-    }
-  });
+//     $(window).scroll(function () {
+//     if ($(this).scrollDown() > 1726) {
+//       $('.photo').animate({
+//         with: "4500px"
+//       },500);
+//     } else {
+//       $('.photo').fadeOut('slow');
+//     }
+//   });
 
-  $('.containerScroll').click(function () {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 1500, 'easeInOutExpo');
-    return false;
-  });
+//   $('.photo').click(function () {
+//     $('html, body').animate({
+//       scrollTop: 0
+//     }, 1500, 'easeInOutExpo');
+//     return false;
+//   });

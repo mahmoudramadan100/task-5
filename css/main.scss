@@ -39,9 +39,25 @@ a {
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
 }
-
-// Start Up-Navbar
-
+.close {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 18px;
+    z-index: 9;
+    @extend .transition;
+    &:hover {
+        color: $red-color;
+    }
+    @include breakpoints(sm) {
+        display: block;
+    }
+    @include breakpoints(xs) {
+        display: block;
+    }
+}
 // Start Up-Navbar
 
 .up-navbar {
@@ -251,6 +267,7 @@ a {
 // Start Header
 .header {
     padding: 80px 0;
+    overflow: hidden;
     .container-header {
         display: flex;
         flex-direction: row;
@@ -265,6 +282,7 @@ a {
                 color: $red-color;
                 font-size: 30px;
                 font-weight: 500;
+                animation: fade-right 0.4s both;
                 @include breakpoints(xs) {
                     font-size: 24px;
                 }
@@ -274,9 +292,10 @@ a {
                 font-size: 27px;
                 font-weight: 500;
                 margin: 30px 0;
+                animation: fade-right 0.9s both;
                 @include breakpoints(xs) {
                     font-size: 20px;
-                    margin: 30px 0;
+                    margin: 15px 0;
                 }
             }
             p {
@@ -337,6 +356,8 @@ a {
             max-width: 650px;
             max-height: 280px;
             object-fit: contain;
+            animation: fade-left 0.8s both;
+            @extend .transition;
             @include breakpoints(sm) {
                 max-width: 90%;
             }
@@ -484,6 +505,7 @@ a {
                     width: 40px;
                     height: 40px;
                     line-height: 40px;
+                    margin-top: -10px;
                 }
                 h4 {
                     display: inline-block;
@@ -524,6 +546,12 @@ a {
             gap: 10px;
         }
     }
+    @include breakpoints(sm) {
+        padding: 20px 0 10px;
+    }
+    @include breakpoints(xs) {
+        padding: 20px 0 10px;
+    }
 }
 // End Feature
 // Start Foucs
@@ -551,7 +579,13 @@ a {
             h6 {
                 color: #c3bbc1;
                 font-weight: 300;
-                font-size: 14px;
+                font-size: 20px;
+                @include breakpoints(sm) {
+                    font-size: 18px;
+                }
+                @include breakpoints(xs) {
+                    font-size: 17px;
+                }
             }
             p {
                 font-size: 24px;
@@ -566,7 +600,7 @@ a {
             position: absolute;
             top: -15px;
             left: 0;
-            transform: translateX(50%);
+            // transform: translateX(50%);
             @include breakpoints(large) {
                 transform: translateX(10%);
                 -webkit-transform: translateX(10%);
@@ -622,6 +656,12 @@ a {
             color: $blue-color;
             line-height: 1.7;
             margin: 40px 0;
+            @include breakpoints(sm) {
+                margin: 20px 0;
+            }
+            @include breakpoints(xs) {
+                margin: 20px 0;
+            }
         }
         .app-img {
             display: flex;
@@ -665,7 +705,18 @@ a {
             max-width: 270px;
             max-height: 370px;
         }
-        @include breakpoints(xs) {}
+        @include breakpoints(sm) {
+            display: none;
+        }
+        @include breakpoints(xs) {
+            display: none;
+        }
+    }
+    @include breakpoints(sm) {
+        padding: 25px 0 40px;
+    }
+    @include breakpoints(xs) {
+        padding: 25px 0 40px;
     }
 }
 // End App
@@ -696,7 +747,8 @@ a {
         right: 0;
         .box {
             display: flex;
-            padding: 0 40px;
+            justify-content: center;
+            padding: 0 60px;
             width: 25%;
             height: 130px;
             align-items: center;
@@ -715,12 +767,18 @@ a {
                 @extend .transition;
                 @include breakpoints(md) {
                     margin: 0 auto;
+                    width: 40px;
+                    height: 40px;
                 }
                 @include breakpoints(sm) {
                     margin: 0 auto;
+                    width: 35px;
+                    height: 35px;
                 }
                 @include breakpoints(xs) {
                     margin: 0 auto;
+                    width: 35px;
+                    height: 35px;
                 }
             }
             a {
@@ -792,8 +850,8 @@ a {
                 width: 120px;
             }
             @include breakpoints(xs) {
-                height: 100px;
-                width: 120px;
+                height: 90px;
+                width: 110px;
             }
         }
         p {
@@ -824,11 +882,11 @@ a {
         }
         @include breakpoints(sm) {
             width: 85%;
-            padding: 70px 0 35px;
+            padding: 50px 0 20px;
         }
         @include breakpoints(xs) {
             width: 80%;
-            padding: 70px 0 35px;
+            padding: 50px 0 20px;
         }
     }
     .copyright {
@@ -883,9 +941,30 @@ a {
     }
     .icon {
         font-size: 22px;
+        @include breakpoints(sm) {
+            font-size: 20px;
+        }
+        @include breakpoints(xs) {
+            font-size: 18px;
+        }
+    }
+    p {
+        margin: 0;
+        padding: 0;
+        @include breakpoints(sm) {
+            display: none;
+        }
+        @include breakpoints(xs) {
+            display: none;
+        }
+    }
+    @include breakpoints(xs) {
+        width: 35px;
+        height: 45px;
     }
 }
 
+// End Scroll
 @media only screen and (min-width: 767px) {
     .navbar {
         justify-content: space-between;
@@ -910,9 +989,14 @@ body.open .navbar-overlay {
     visibility: visible;
     opacity: 1;
 }
-
+.open {
+    overflow: hidden !important;
+}
 @media only screen and (min-width: 767px) {
     .navbar-overlay {
+        display: none;
+    }
+    .close {
         display: none;
     }
 }
@@ -991,3 +1075,101 @@ body.open .navbar-menu {
 // .navbar-menu > button.active {
 //     color: inherit;
 // }
+
+
+.inline-photo {
+  border-radius: .25em;
+  box-shadow: 1em 1em 2em .25em transparent;
+  opacity: 0;
+  transform: translateY(0em) rotateZ(0deg);
+  transition: transform 4s .25s cubic-bezier(0,1,.3,1),
+              opacity .3s .25s ease-out;
+//   max-width: 600px;
+  will-change: transform, opacity;
+  }
+  .inline-photo.is-visible {
+    opacity: 1;
+    transform: rotateZ(-2deg);
+  }
+//   .photo {
+//     opacity: 0.4;
+//   }
+//   .show-on {
+//     opacity: 1;
+//     animation: fade-right 0.6s both;
+//   }
+
+    @keyframes rotate {
+        0% , 50%{
+            opacity: 0.5;
+            transform: rotateZ(-20deg);
+        }
+        100% {
+            transform: rotateZ(0deg);
+        }
+    }
+//   img.active {
+//     opacity: 1;
+//   }
+//   .active.fade-bottom {
+//     animation: fade-bottom 1s ease-in;
+//   }
+//   .active.fade-left {
+//     animation: fade-left 1s ease-in;
+//   }
+//   .active.fade-right {
+//     animation: fade-right 1s ease-in;
+//   }
+
+@keyframes move-right {
+    0% , 50%{
+        opacity: 0.5;
+        translate: 0 500px;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fade-bottom {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+  @keyframes fade-left {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-right {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+ 
+
+  .inline-photo.is-visible {
+    opacity: 1;
+    transform: rotateZ(-2deg);
+  }
+ 

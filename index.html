@@ -140,8 +140,12 @@
                 <button type="button" class="navbar-burger" onclick="toggleMenuOpen()">
                     <i class="fas fa-bars"></i>
                   </button>
-                <img src="img/logo.png" class="logo navbar-title">
+                 
+                <img src="img/logo.png" class="logo navbar-title" alt="logo">
                 <ul class="list navbar-menu">
+                    <div class="close"  onclick="toggleMenuOpen()">
+                        <i class="fas fa-times"></i>
+                      </div>
                     <li>
                         <a href="#" > الرئيسية</a>
                     </li>
@@ -175,7 +179,7 @@
                         احصل على الشحن
                     </a>
                 </div>
-                <img src="img/banner.png" alt="" loading="lazy">
+                <img src="img/banner.png" alt="img car">
             </div>
         </div>
         <!-- End Header -->
@@ -230,7 +234,7 @@
                     </div>
                 </div>
                 <!-- <div class="img"> -->
-                    <img src="img/advantage.png" alt="img-feature" loading="lazy">
+                    <img src="img/advantage.png" alt="img-feature" class="inline-photo show-on-scroll">
                 <!-- </div> -->
                 <div class="content content-2">
                     <div class="text">
@@ -281,7 +285,7 @@
                     <h6>مهمتنا</h6>
                     <p> اجعل العالم أكثر نظافة , واحفظ الموارد الطبيعية , ووفر الراحه للناس</p>
                 </div>
-                <img src="img/Layer_1.png" alt="photo">
+                <img src="img/Layer_1.png" alt="photo" class="inline-photo show-on-scroll">
             </div>
         </div>
         <!-- End Foucs -->
@@ -311,7 +315,7 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="img">
-                        <img src="img/mobile-1.png" alt="">
+                        <img src="img/mobile-1.png" alt="application-photo" class="inline-photo show-on-scroll">
                     </div>
                 </div>
             </div>
@@ -373,7 +377,8 @@
         <!-- End Navbar -->
         <button class="scroll-top" id="scroll-top">
             <i class="fas fa-bolt icon"></i>
-            للاعلى
+            <p>للاعلى</p>
+            
     </button>
 
         <script src="js/jquery-1.8.3.min.js"></script>
